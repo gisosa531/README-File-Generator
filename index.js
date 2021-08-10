@@ -24,7 +24,7 @@ const questions = [
     {
         type:"input",
         name: "description",
-        message:"What is the project about?"
+        message:"Please include a brief description of the project"
     },
 
     {
@@ -49,16 +49,19 @@ const questions = [
         name: "usage",
         message:"What information does the user need to access the repository?",
     },
+    {
+        type:"list",
+        name: "license",
+        message:"What licenses do you need for your project?",
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+    },
 ];
 
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-      err ? console.error(err) : console.log('Success!')
-    );
-    
-}
-
+      err ? console.error(err) : console.log('Success!'));
+};
 
 // Function to initialize app
 function init() {
@@ -67,7 +70,6 @@ function init() {
     const markdown = generateMarkdown(rawData);
     writeToFile("README.md", markdown);
     })
-
 }
 
 // Function call to initialize app
