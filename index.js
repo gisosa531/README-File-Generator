@@ -53,14 +53,14 @@ const questions = [
         type:"list",
         name: "license",
         message:"What licenses do you need for your project?",
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'Mozilla', 'None']
     },
 ];
 
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-      err ? console.error(err) : console.log('Success!'));
+      err ? console.error(err) : console.log('You have successfylly created a README File!'));
 };
 
 // Function to initialize app
